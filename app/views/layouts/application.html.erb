@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AuthDevise</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <nav id="users">
+    <% if user_signed_in? %>
+      <%= link_to "Account", edit_user_registration_path(current_user) %>
+      <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+    <% else %>
+      <%= link_to "Signup", new_user_registration_path %>
+      <%= link_to "Log In", new_user_session_path %>
+    <% end %>
+  </nav>
+  <br>
+
+  <nav>
+    <% unless current_page?(root_path) %>
+      <%= link_to "Home", "/" %>
+    <% end %>
+    <%= link_to "About", "/about" %>
+    <%= link_to "Contact", "/contact" %>
+    <% if current_user && user_signed_in? %>
+      <%= link_to "Secret", "/secret" %>
+    <% end %>
+  </nav>
+
+<%= yield %>
+
+</body>
+</html>
