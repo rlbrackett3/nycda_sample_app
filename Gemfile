@@ -7,6 +7,8 @@ gem 'sqlite3'
 
 gem 'devise'
 
+gem 'carrierwave'
+
 gem 'haml-rails'
 gem 'simple_form'
 
