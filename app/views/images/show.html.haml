@@ -1,8 +1,27 @@
-%p#notice= notice
-
-%p
+%h1
   %b Title:
   = @image.title
+.images
+  %b Thumb:
+  = image_tag(@image.image.thumb.url) if @image.image?
+  %br
+
+  %b Small:
+  = image_tag(@image.image.small.url) if @image.image?
+  %br
+
+  %b Medium:
+  = image_tag(@image.image.medium.url) if @image.image?
+  %br
+
+  %b Large:
+  = image_tag(@image.image.large.url) if @image.image?
+  %br
+
+  %b Processed Original:
+  = image_tag(@image.image.url) if @image.image?
+  %br
+
 %p
   %b Project:
   = @image.project_id
