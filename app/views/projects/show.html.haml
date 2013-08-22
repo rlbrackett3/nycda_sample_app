@@ -6,6 +6,12 @@
 %p
   %b Description:
   = @project.description
+%ul.images
+  - @project.images.each do |i|
+    %li
+      %b Thumb:
+      = image_tag(i.image.thumb.url) if i.image?
+      %br
 
 = link_to 'Edit', edit_project_path(@project)
 \|

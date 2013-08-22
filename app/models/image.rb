@@ -4,4 +4,5 @@ class Image < ActiveRecord::Base
   attr_accessible :project_id, :title, :image, :image_cache
 
   belongs_to :project
+  # belongs_to :exhibit
 end
