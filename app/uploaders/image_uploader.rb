@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -17,9 +17,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # Cache directory to work with Heroku
-  def cache_dir
-    "#{Rails.root}/tmp/uploads"
-  end
+  # def cache_dir
+  #   "#{Rails.root}/tmp/uploads"
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
