@@ -1,11 +1,9 @@
 AuthDevise::Application.routes.draw do
 
   resources :projects
-
-
   resources :images
 
-
+  resources :profiles, only: [:show, :edit, :update]
   devise_for :users
 
   match '/about' => 'pages#about'
